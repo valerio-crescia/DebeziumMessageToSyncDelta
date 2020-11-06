@@ -1,0 +1,18 @@
+DebeziumMessage{
+  schema=MasterSchema
+  {type=null,
+    fields=[MessageSchema{type=struct,
+       fields=[Field{type=int32, optional=false, field=id},
+          Field{type=string, optional=false, field=first_name},
+           Field{type=string, optional=false, field=last_name},
+       Field{type=string, optional=false, field=email}
+       ], optional=true, name=dbserver1.inventory.customers.Value, field=before},
+        MessageSchema{type=struct,
+          fields=[Field{type=int32, optional=false, field=id},
+             Field{type=string, optional=false, field=first_name},
+              Field{type=string, optional=false, field=last_name},
+             Field{type=string, optional=false, field=email}
+           ],
+              optional=true, name=dbserver1.inventory.customers.Value, field=after}],
+               optional=false, name=null}
+              , payload=Payload{source=Source{version=1.3.0.Final, connector=mysql, name=dbserver1, tsMs=Tue Oct 27 12:10:12 CET 2020, snapshot=false, db=inventory, table=customers, serverId=223344, gtid=null, file=mysql-bin.000003, pos=1759, row=0, thread=12, query=null}, operation=CREATE, before={}, after={last_name=mario, id=11, first_name=MAro, email=mario@lino.it}}}
